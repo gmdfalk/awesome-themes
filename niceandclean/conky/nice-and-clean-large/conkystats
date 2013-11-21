@@ -1,0 +1,33 @@
+background no
+use_xft yes
+xftfont Helvetica:size=15
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size  700
+maximum_width 700
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color 808080
+default_shade_color 101319
+default_outline_color green
+alignment top_left
+gap_x 345
+gap_y 615
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+
+TEXT
+${color ce2c51}RAM: ${goto 160}CPU: ${goto 300}Battery: ${goto 450}System:     
+${color ffffff}${memperc}% ${goto 160}${cpu cpu0}% ${goto 300}${if_smapi_bat_installed 0}${smapi_bat_perc 0}%${else}Akku: smapi module not loaded${endif} ${goto 450}${kernel}${color}
+${color grey}${memfree} ${goto 160}${freq} ${goto 300}${if_smapi_bat_installed 0}${smapi_bat_power 0}W${endif} ${goto 450}${ibm_fan} rpm${color}
+${color 737373}${memmax} ${goto 160}${exec echo $(cat /proc/acpi/ibm/thermal | cut -c15-16)}°C ${goto 300}${if_smapi_bat_installed 0}${exec echo "$(cat /sys/devices/platform/smapi/BAT0/remaining_running_time)/60" | bc -l | cut -b1-3}h${endif} ${goto 450}${if_gw}${exec echo $(netctl list | awk '/*/ {print $2}')}${else}N/A${endif}${color}

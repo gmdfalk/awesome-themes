@@ -1,0 +1,30 @@
+background no
+use_xft yes
+xftfont Helvetica:size=100
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size  170
+maximum_width 170
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color 808080
+default_shade_color 101319
+default_outline_color green
+alignment top_left
+gap_x 225
+gap_y 400
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale no
+
+TEXT
+${goto 10}${color ffffff}${time %M}

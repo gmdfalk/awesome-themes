@@ -1,0 +1,35 @@
+background no
+use_xft yes
+xftfont Helvetica:size=15
+xftalpha 0.9
+update_interval 3.0
+total_run_times 0
+own_window yes
+own_window_type desktop
+own_window_transparent yes
+own_window_hints undecorated,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size  300
+maximum_width 750
+draw_shades yes
+draw_outline no
+draw_borders no
+draw_graph_borders yes
+default_color 808080
+default_shade_color 101319
+default_outline_color green
+alignment top_left
+gap_x 345
+gap_y 440
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+
+TEXT
+
+${color ce2c51}RAM: ${goto 160}CPU: ${goto 270}Battery: ${goto 450}System:
+${color ffffff}U:${mem} ${goto 160}0:${cpu cpu0}% ${goto 270}${battery} ${goto 450}Kern:${kernel}
+${color grey}F:${memfree} ${goto 160}1:${cpu cpu1}% ${goto 270}${battery_time} ${goto 450}${exec echo $(netcfg current)}
+${color 737373}T:${memmax} ${goto 160}${freq}${goto 270}${battery_percent} ${goto 450}Wlan:${if_up wlan0}${color cccc88}Up${else}${color 88cccc}Down${endif}
+${color 737373}${goto 450}Eth:${if_up eth0}${color cccc88}Up${else}${color 88cccc}Down${endif}

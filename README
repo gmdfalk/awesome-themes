@@ -1,0 +1,19 @@
+This is a collection of themes for Awesome WM (v3.4) I found all over the net. I've cleaned up and improved the themes a little by removing absolute paths and adding fallback wallpapers.
+
+If you're the author of one of these themes and my uploading it here offends you, please drop me a line and I'll take it down.
+
+Installation:
+If you're using ArchLinux, you can install this theme-package from the AUR.
+Otherwise, clone this repository and put the contents into your $XDG_CONFIG_HOME/awesome/themes so that the directory structure looks like this:
+
+├── awesome (e.g. /home/user/.config/awesome)
+│   ├── rc.lua
+│   ├── themes
+│   │   ├── arch
+│   │   ├── bamboo
+│   │   ├── bio
+│   │   ├── blue
+│   │   ├── blue_black_red
+│   │   ├── blue_black_red_2
+│   │   ├── brown
+...
