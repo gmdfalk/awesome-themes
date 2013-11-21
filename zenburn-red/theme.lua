@@ -34,9 +34,9 @@ elseif awful.util.file_readable(wallpaper2) then
 elseif awful.util.file_readable(wpscript) then
 	theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper wallpaper3 }
+	theme.wallpaper wallpaper3
 else
-	theme.wallpaper wallpaper4 }
+	theme.wallpaper wallpaper4
 end
 
 if awful.util.file_readable(config .. "/vain/init.lua") then
