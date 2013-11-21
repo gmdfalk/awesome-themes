@@ -34,15 +34,15 @@ wpscript2     = themedir .. "/niceandclean.sh"
 if awful.util.file_readable(wpscript2) then
 	theme.wallpaper_cmd = { "sh " .. wpscript2 .. " " .. conky_layout }
 elseif awful.util.file_readable(wallpaper1) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper1 }
+	theme.wallpaper wallpaper1 }
 elseif awful.util.file_readable(wallpaper2) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper2 }
+	theme.wallpaper wallpaper2 }
 elseif awful.util.file_readable(wpscript) then
 	theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper3 }
+	theme.wallpaper wallpaper3 }
 else
-	theme.wallpaper_cmd = { "awsetbg " .. wallpaper4 }
+	theme.wallpaper wallpaper4 }
 end
 
 if awful.util.file_readable(config .. "/vain/init.lua") then
