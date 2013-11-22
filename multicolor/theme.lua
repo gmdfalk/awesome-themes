@@ -5,11 +5,49 @@
                                       
 --]]
 
+local awful = require("awful")
+awful.util = require("awful.util")
 
-theme                               = {}
+--{{{ Main
+theme = {}
 
-theme.confdir                       = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
-theme.wallpaper                     = theme.confdir .. "/wall.png"
+home          = os.getenv("HOME")
+config        = awful.util.getdir("config")
+shared        = "/usr/share/awesome"
+if not awful.util.file_readable(shared .. "/icons/awesome16.png") then
+    shared    = "/usr/share/local/awesome"
+end
+sharedicons   = shared .. "/icons"
+sharedthemes  = shared .. "/themes"
+themes        = config .. "/themes"
+themename     = "/multicolor"
+if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
+       themes = sharedthemes
+end
+themedir      = themes .. themename
+
+wallpaper1    = themedir .. "/wall.png"
+wallpaper2    = themedir .. "/background.png"
+wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
+wallpaper4    = sharedthemes .. "/default/background.png"
+wpscript      = home .. "/.wallpaper"
+
+if awful.util.file_readable(wallpaper1) then
+	theme.wallpaper = wallpaper1
+elseif awful.util.file_readable(wallpaper2) then
+	theme.wallpaper = wallpaper2
+elseif awful.util.file_readable(wpscript) then
+	theme.wallpaper_cmd = { "sh " .. wpscript }
+elseif awful.util.file_readable(wallpaper3) then
+	theme.wallpaper = wallpaper3
+else
+	theme.wallpaper = wallpaper4
+end
+
+if awful.util.file_readable(config .. "/vain/init.lua") then
+    theme.useless_gap_width  = "3"
+end
+--}}}
 
 theme.font                          = "Terminus 8"
 --theme.taglist_font                =
@@ -42,44 +80,44 @@ theme.menu_fg_focus                 = "#ff8c00"
 theme.menu_bg_normal                = "#050505dd"
 theme.menu_bg_focus                 = "#050505dd"
 
-theme.menu_submenu_icon             = theme.confdir .. "/icons/submenu.png"
-theme.widget_temp                   = theme.confdir .. "/icons/temp.png"
-theme.widget_uptime                 = theme.confdir .. "/icons/ac.png"
-theme.widget_cpu                    = theme.confdir .. "/icons/cpu.png"
-theme.widget_weather                = theme.confdir .. "/icons/dish.png"
-theme.widget_fs                     = theme.confdir .. "/icons/fs.png"
-theme.widget_mem                    = theme.confdir .. "/icons/mem.png"
-theme.widget_fs                     = theme.confdir .. "/icons/fs.png"
-theme.widget_note                   = theme.confdir .. "/icons/note.png"
-theme.widget_note_on                = theme.confdir .. "/icons/note_on.png"
-theme.widget_netdown                = theme.confdir .. "/icons/net_down.png"
-theme.widget_netup                  = theme.confdir .. "/icons/net_up.png"
-theme.widget_mail                   = theme.confdir .. "/icons/mail.png"
-theme.widget_batt                   = theme.confdir .. "/icons/bat.png"
-theme.widget_clock                  = theme.confdir .. "/icons/clock.png"
-theme.widget_vol                    = theme.confdir .. "/icons/spkr.png"
+theme.menu_submenu_icon             = themedir .. "/icons/submenu.png"
+theme.widget_temp                   = themedir .. "/icons/temp.png"
+theme.widget_uptime                 = themedir .. "/icons/ac.png"
+theme.widget_cpu                    = themedir .. "/icons/cpu.png"
+theme.widget_weather                = themedir .. "/icons/dish.png"
+theme.widget_fs                     = themedir .. "/icons/fs.png"
+theme.widget_mem                    = themedir .. "/icons/mem.png"
+theme.widget_fs                     = themedir .. "/icons/fs.png"
+theme.widget_note                   = themedir .. "/icons/note.png"
+theme.widget_note_on                = themedir .. "/icons/note_on.png"
+theme.widget_netdown                = themedir .. "/icons/net_down.png"
+theme.widget_netup                  = themedir .. "/icons/net_up.png"
+theme.widget_mail                   = themedir .. "/icons/mail.png"
+theme.widget_batt                   = themedir .. "/icons/bat.png"
+theme.widget_clock                  = themedir .. "/icons/clock.png"
+theme.widget_vol                    = themedir .. "/icons/spkr.png"
 
-theme.taglist_squares_sel           = theme.confdir .. "/icons/square_a.png"
-theme.taglist_squares_unsel         = theme.confdir .. "/icons/square_b.png"
+theme.taglist_squares_sel           = themedir .. "/icons/square_a.png"
+theme.taglist_squares_unsel         = themedir .. "/icons/square_b.png"
 
 theme.tasklist_disable_icon         = true
 theme.tasklist_floating             = ""
 theme.tasklist_maximized_horizontal = ""
 theme.tasklist_maximized_vertical   = ""
 
-theme.layout_tile                   = theme.confdir .. "/icons/tile.png"
-theme.layout_tilegaps               = theme.confdir .. "/icons/tilegaps.png"
-theme.layout_tileleft               = theme.confdir .. "/icons/tileleft.png"
-theme.layout_tilebottom             = theme.confdir .. "/icons/tilebottom.png"
-theme.layout_tiletop                = theme.confdir .. "/icons/tiletop.png"
-theme.layout_fairv                  = theme.confdir .. "/icons/fairv.png"
-theme.layout_fairh                  = theme.confdir .. "/icons/fairh.png"
-theme.layout_spiral                 = theme.confdir .. "/icons/spiral.png"
-theme.layout_dwindle                = theme.confdir .. "/icons/dwindle.png"
-theme.layout_max                    = theme.confdir .. "/icons/max.png"
-theme.layout_fullscreen             = theme.confdir .. "/icons/fullscreen.png"
-theme.layout_magnifier              = theme.confdir .. "/icons/magnifier.png"
-theme.layout_floating               = theme.confdir .. "/icons/floating.png"
+theme.layout_tile                   = themedir .. "/icons/tile.png"
+theme.layout_tilegaps               = themedir .. "/icons/tilegaps.png"
+theme.layout_tileleft               = themedir .. "/icons/tileleft.png"
+theme.layout_tilebottom             = themedir .. "/icons/tilebottom.png"
+theme.layout_tiletop                = themedir .. "/icons/tiletop.png"
+theme.layout_fairv                  = themedir .. "/icons/fairv.png"
+theme.layout_fairh                  = themedir .. "/icons/fairh.png"
+theme.layout_spiral                 = themedir .. "/icons/spiral.png"
+theme.layout_dwindle                = themedir .. "/icons/dwindle.png"
+theme.layout_max                    = themedir .. "/icons/max.png"
+theme.layout_fullscreen             = themedir .. "/icons/fullscreen.png"
+theme.layout_magnifier              = themedir .. "/icons/magnifier.png"
+theme.layout_floating               = themedir .. "/icons/floating.png"
 
 
 return theme

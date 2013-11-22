@@ -5,10 +5,49 @@
                                
 --]]
 
-theme                                           = {}
+local awful = require("awful")
+awful.util = require("awful.util")
 
-theme.dir                                       = os.getenv("HOME") .. "/.config/awesome/themes/copland"
-theme.wallpaper                                 = theme.dir .. "/wall.png"
+--{{{ Main
+theme = {}
+
+home          = os.getenv("HOME")
+config        = awful.util.getdir("config")
+shared        = "/usr/share/awesome"
+if not awful.util.file_readable(shared .. "/icons/awesome16.png") then
+    shared    = "/usr/share/local/awesome"
+end
+sharedicons   = shared .. "/icons"
+sharedthemes  = shared .. "/themes"
+themes        = config .. "/themes"
+themename     = "/copland"
+if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
+       themes = sharedthemes
+end
+themedir      = themes .. themename
+
+wallpaper1    = themedir .. "/wall.png"
+wallpaper2    = themedir .. "/background.png"
+wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
+wallpaper4    = sharedthemes .. "/default/background.png"
+wpscript      = home .. "/.wallpaper"
+
+if awful.util.file_readable(wallpaper1) then
+	theme.wallpaper = wallpaper1
+elseif awful.util.file_readable(wallpaper2) then
+	theme.wallpaper = wallpaper2
+elseif awful.util.file_readable(wpscript) then
+	theme.wallpaper_cmd = { "sh " .. wpscript }
+elseif awful.util.file_readable(wallpaper3) then
+	theme.wallpaper = wallpaper3
+else
+	theme.wallpaper = wallpaper4
+end
+
+if awful.util.file_readable(config .. "/vain/init.lua") then
+    theme.useless_gap_width  = "3"
+end
+--}}}
 
 theme.font                                      = "Tamsyn 10.5"
 theme.fg_normal                                 = "#BBBBBB"
@@ -35,66 +74,66 @@ theme.tasklist_maximized_horizontal             = ""
 theme.tasklist_maximized_vertical               = ""
 theme.tasklist_disable_icon                     = true
 
-theme.awesome_icon                              = theme.dir .."/icons/awesome.png"
-theme.menu_submenu_icon                         = theme.dir .."/icons/submenu.png"
-theme.taglist_squares_sel                       = theme.dir .. "/icons/square_unsel.png"
-theme.taglist_squares_unsel                     = theme.dir .. "/icons/square_unsel.png"
-theme.widget_bg                                 = theme.dir .. "/icons/widget_bg.png"
-theme.vol                                       = theme.dir .. "/icons/vol.png"
-theme.vol_low                                   = theme.dir .. "/icons/vol_low.png"
-theme.vol_no                                    = theme.dir .. "/icons/vol_no.png"
-theme.vol_mute                                  = theme.dir .. "/icons/vol_mute.png"
-theme.disk                                      = theme.dir .. "/icons/disk.png"
-theme.ac                                        = theme.dir .. "/icons/ac.png"
-theme.bat                                       = theme.dir .. "/icons/bat.png"
-theme.bat_low                                   = theme.dir .. "/icons/bat_low.png"
-theme.bat_empty                                 = theme.dir .. "/icons/bat_empty.png"
-theme.play                                      = theme.dir .. "/icons/play.png"
-theme.pause                                     = theme.dir .. "/icons/pause.png"
+theme.awesome_icon                              = themedir .."/icons/awesome.png"
+theme.menu_submenu_icon                         = themedir .."/icons/submenu.png"
+theme.taglist_squares_sel                       = themedir .. "/icons/square_unsel.png"
+theme.taglist_squares_unsel                     = themedir .. "/icons/square_unsel.png"
+theme.widget_bg                                 = themedir .. "/icons/widget_bg.png"
+theme.vol                                       = themedir .. "/icons/vol.png"
+theme.vol_low                                   = themedir .. "/icons/vol_low.png"
+theme.vol_no                                    = themedir .. "/icons/vol_no.png"
+theme.vol_mute                                  = themedir .. "/icons/vol_mute.png"
+theme.disk                                      = themedir .. "/icons/disk.png"
+theme.ac                                        = themedir .. "/icons/ac.png"
+theme.bat                                       = themedir .. "/icons/bat.png"
+theme.bat_low                                   = themedir .. "/icons/bat_low.png"
+theme.bat_empty                                 = themedir .. "/icons/bat_empty.png"
+theme.play                                      = themedir .. "/icons/play.png"
+theme.pause                                     = themedir .. "/icons/pause.png"
 
-theme.layout_tile                               = theme.dir .. "/icons/tile.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
-theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
-theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
-theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
-theme.layout_max                                = theme.dir .. "/icons/max.png"
-theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
-theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
+theme.layout_tile                               = themedir .. "/icons/tile.png"
+theme.layout_tileleft                           = themedir .. "/icons/tileleft.png"
+theme.layout_tilebottom                         = themedir .. "/icons/tilebottom.png"
+theme.layout_tiletop                            = themedir .. "/icons/tiletop.png"
+theme.layout_fairv                              = themedir .. "/icons/fairv.png"
+theme.layout_fairh                              = themedir .. "/icons/fairh.png"
+theme.layout_spiral                             = themedir .. "/icons/spiral.png"
+theme.layout_dwindle                            = themedir .. "/icons/dwindle.png"
+theme.layout_max                                = themedir .. "/icons/max.png"
+theme.layout_fullscreen                         = themedir .. "/icons/fullscreen.png"
+theme.layout_magnifier                          = themedir .. "/icons/magnifier.png"
+theme.layout_floating                           = themedir .. "/icons/floating.png"
 
-theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
-theme.titlebar_close_button_normal              = theme.dir .. "/icons/titlebar/close_normal.png"
+theme.titlebar_close_button_focus               = themedir .. "/icons/titlebar/close_focus.png"
+theme.titlebar_close_button_normal              = themedir .. "/icons/titlebar/close_normal.png"
 
-theme.titlebar_ontop_button_focus_active        = theme.dir .. "/icons/titlebar/ontop_focus_active.png"
-theme.titlebar_ontop_button_normal_active       = theme.dir .. "/icons/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_inactive      = theme.dir .. "/icons/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_inactive     = theme.dir .. "/icons/titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_active        = themedir .. "/icons/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active       = themedir .. "/icons/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive      = themedir .. "/icons/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_inactive     = themedir .. "/icons/titlebar/ontop_normal_inactive.png"
 
-theme.titlebar_sticky_button_focus_active       = theme.dir .. "/icons/titlebar/sticky_focus_active.png"
-theme.titlebar_sticky_button_normal_active      = theme.dir .. "/icons/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_inactive     = theme.dir .. "/icons/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_inactive    = theme.dir .. "/icons/titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_active       = themedir .. "/icons/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active      = themedir .. "/icons/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_inactive     = themedir .. "/icons/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_inactive    = themedir .. "/icons/titlebar/sticky_normal_inactive.png"
 
-theme.titlebar_floating_button_focus_active     = theme.dir .. "/icons/titlebar/floating_focus_active.png"
-theme.titlebar_floating_button_normal_active    = theme.dir .. "/icons/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_inactive   = theme.dir .. "/icons/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_inactive  = theme.dir .. "/icons/titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_active     = themedir .. "/icons/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_active    = themedir .. "/icons/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_inactive   = themedir .. "/icons/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_inactive  = themedir .. "/icons/titlebar/floating_normal_inactive.png"
 
-theme.titlebar_maximized_button_focus_active    = theme.dir .. "/icons/titlebar/maximized_focus_active.png"
-theme.titlebar_maximized_button_normal_active   = theme.dir .. "/icons/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_inactive  = theme.dir .. "/icons/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_inactive = theme.dir .. "/icons/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_active    = themedir .. "/icons/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active   = themedir .. "/icons/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = themedir .. "/icons/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_inactive = themedir .. "/icons/titlebar/maximized_normal_inactive.png"
 
 -- lain related
 theme.useless_gap_width                         = 10
-theme.layout_centerfair                         = theme.dir .. "/icons/centerfair.png"
-theme.layout_termfair                           = theme.dir .. "/icons/termfair.png"
-theme.layout_uselessfair                        = theme.dir .. "/icons/fairv.png"
-theme.layout_uselessfairh                       = theme.dir .. "/icons/fairh.png"
-theme.layout_uselessdwindle                     = theme.dir .. "/icons/dwindle.png"
-theme.layout_uselesstile                        = theme.dir .. "/icons/tile.png"
+theme.layout_centerfair                         = themedir .. "/icons/centerfair.png"
+theme.layout_termfair                           = themedir .. "/icons/termfair.png"
+theme.layout_uselessfair                        = themedir .. "/icons/fairv.png"
+theme.layout_uselessfairh                       = themedir .. "/icons/fairh.png"
+theme.layout_uselessdwindle                     = themedir .. "/icons/dwindle.png"
+theme.layout_uselesstile                        = themedir .. "/icons/tile.png"
 
 return theme
