@@ -25,9 +25,9 @@ themedir      = themes .. themename
 snail = 1
 
 if snail == 1 then
-	wallpaper1    = themedir .. "/snail.jpg"
+  wallpaper1    = themedir .. "/snail.jpg"
 else
-	wallpaper1    = themedir .. "/background.png"
+  wallpaper1    = themedir .. "/background.png"
 end
 wallpaper2    = themedir .. "/background.jpg"
 wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
@@ -35,19 +35,15 @@ wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 
 if awful.util.file_readable(wallpaper1) then
-	theme.wallpaper = wallpaper1
+  theme.wallpaper = wallpaper1
 elseif awful.util.file_readable(wallpaper2) then
-	theme.wallpaper = wallpaper2
+  theme.wallpaper = wallpaper2
 elseif awful.util.file_readable(wpscript) then
-	theme.wallpaper_cmd = { "sh " .. wpscript }
+  theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper = wallpaper3
+  theme.wallpaper = wallpaper3
 else
-	theme.wallpaper = wallpaper4
-end
-
-if awful.util.file_readable(config .. "/vain/init.lua") then
-    theme.useless_gap_width  = "3"
+  theme.wallpaper = wallpaper4
 end
 --}}}
 if snail == 1 then
@@ -60,9 +56,9 @@ if snail == 1 then
     theme.bg_minimize   = "#352E2A"
     theme.fg_normal     = "#E7E5DE"
     theme.fg_focus      = "#F5F5F5"
-    theme.batt_ok	= "#79B94A"
-    theme.batt_danger	= "#CBF045"
-    theme.batt_dying	= "#FC5D44"
+    theme.batt_ok = "#79B94A"
+    theme.batt_danger = "#CBF045"
+    theme.batt_dying  = "#FC5D44"
 else
     theme.font          = "sans 8"
     theme.bg_normal     = "#7f7f7dee"
@@ -74,7 +70,7 @@ else
 end
 
 theme.fg_urgent     = "#f7f7f7"
-theme.fg_minimize	= "#b9bbbb"
+theme.fg_minimize = "#b9bbbb"
 theme.border_width  = "1"
 theme.border_normal = "#cbc8c1"
 theme.border_focus  = "#282421"

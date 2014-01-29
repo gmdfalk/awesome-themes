@@ -39,9 +39,6 @@ else
   theme.wallpaper = wallpaper4
 end
 
-if awful.util.file_readable(config .. "/vain/init.lua") then
-    theme.useless_gap_width  = "3"
-end
 --}}}
 
 

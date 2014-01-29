@@ -28,19 +28,15 @@ wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 
 if awful.util.file_readable(wallpaper1) then
-	theme.wallpaper = wallpaper1
+  theme.wallpaper = wallpaper1
 elseif awful.util.file_readable(wallpaper2) then
-	theme.wallpaper = wallpaper2
+  theme.wallpaper = wallpaper2
 elseif awful.util.file_readable(wpscript) then
-	theme.wallpaper_cmd = { "sh " .. wpscript }
+  theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper = wallpaper3
+  theme.wallpaper = wallpaper3
 else
-	theme.wallpaper = wallpaper4
-end
-
-if awful.util.file_readable(config .. "/vain/init.lua") then
-    theme.useless_gap_width  = "3"
+  theme.wallpaper = wallpaper4
 end
 --}}}
 
@@ -65,11 +61,11 @@ theme.border_marked = "#000000"
 --//
 
 --// Titlebars
-theme.titlebar_fg_normal	= "#808080"
-theme.titlebar_fg_focus		= "#ffffff"
-theme.titlebar_bg_normal	= "#363636ff"
-theme.titlebar_bg_focus		= "#000000ff"
-theme.titlebar_font			= theme.font or "cure 8"
+theme.titlebar_fg_normal  = "#808080"
+theme.titlebar_fg_focus   = "#ffffff"
+theme.titlebar_bg_normal  = "#363636ff"
+theme.titlebar_bg_focus   = "#000000ff"
+theme.titlebar_font     = theme.font or "cure 8"
 --//
 
 -- There are other variable sets

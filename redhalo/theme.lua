@@ -38,10 +38,6 @@ elseif awful.util.file_readable(wallpaper3) then
 else
   theme.wallpaper = wallpaper4
 end
-
-if awful.util.file_readable(config .. "/vain/init.lua") then
-    theme.useless_gap_width  = "3"
-end
 --}}}
 
 theme.font = "Dejavu Sans 8"
