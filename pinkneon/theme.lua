@@ -1,13 +1,42 @@
 -------------------------------
---  "Zenburn" awesome theme  --
---    By Adrian C. (anrxc)   --
+--  "Pink Neon" awesome theme  --
+--    By Ouardane J   --
 -------------------------------
 
 -- Alternative icon sets and widget icons:
 --  * http://awesome.naquadah.org/wiki/Nice_Icons
 
 -- {{{ Main
+local awful = require("awful")
+awful.util = require("awful.util")
+
 theme = {}
+
+home          = os.getenv("HOME")
+config        = awful.util.getdir("config")
+shared        = "/usr/share/awesome"
+if not awful.util.file_readable(shared .. "/icons/awesome16.png") then
+    shared    = "/usr/share/local/awesome"
+    end
+    sharedicons   = shared .. "/icons"
+    sharedthemes  = shared .. "/themes"
+    themes        = config .. "/themes"
+    themename     = "/pinkneon"
+    if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
+      themes = sharedthemes
+      end
+      themedir      = themes .. themename
+
+wallpaper1    = themedir .. "/background.png"
+wpscript      = home .. "/.wallpaper"
+
+
+if awful.util.file_readable(wallpaper1) then
+  theme.wallpaper = wallpaper1
+else awful.util.file_readable(wpscript) then
+ theme.wallpaper_cmd = { "sh " .. wpscript }
+end
+
 theme.wallpaper = "/usr/share/awesome/themes/pinkneon/background.png"
 -- }}}
 
@@ -76,54 +105,54 @@ theme.menu_width  = 100
 
 -- {{{ Icons
 -- {{{ Taglist
-theme.taglist_squares_sel   = "/usr/share/awesome/themes/pinkneon/taglist/squarefz.png"
-theme.taglist_squares_unsel = "/usr/share/awesome/themes/pinkneon/taglist/squarez.png"
+theme.taglist_squares_sel   = themes .. "/taglist/squarefz.png"
+theme.taglist_squares_unsel = themedir .. "/taglist/squarez.png"
 --theme.taglist_squares_resize = "false"
 -- }}}
 
 -- {{{ Misc
-theme.awesome_icon           = "/usr/share/awesome/themes/pinkneon/awesome-icon.png"
-theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
+theme.awesome_icon           = themedir .. "/awesome-icon.png"
+theme.menu_submenu_icon      = themes .. "/default/submenu.png"
 -- }}}
 
 -- {{{ Layout
-theme.layout_tile       = "/usr/share/awesome/themes/pinkneon/layouts/tile.png"
-theme.layout_tileleft   = "/usr/share/awesome/themes/pinkneon/layouts/tileleft.png"
-theme.layout_tilebottom = "/usr/share/awesome/themes/pinkneon/layouts/tilebottom.png"
-theme.layout_tiletop    = "/usr/share/awesome/themes/pinkneon/layouts/tiletop.png"
-theme.layout_fairv      = "/usr/share/awesome/themes/pinkneon/layouts/fairv.png"
-theme.layout_fairh      = "/usr/share/awesome/themes/pinkneon/layouts/fairh.png"
-theme.layout_spiral     = "/usr/share/awesome/themes/pinkneon/layouts/spiral.png"
-theme.layout_dwindle    = "/usr/share/awesome/themes/pinkneon/layouts/dwindle.png"
-theme.layout_max        = "/usr/share/awesome/themes/pinkneon/layouts/max.png"
-theme.layout_fullscreen = "/usr/share/awesome/themes/pinkneon/layouts/fullscreen.png"
-theme.layout_magnifier  = "/usr/share/awesome/themes/pinkneon/layouts/magnifier.png"
-theme.layout_floating   = "/usr/share/awesome/themes/pinkneon/layouts/floating.png"
+theme.layout_tile       = themedir .. "/layouts/tile.png"
+theme.layout_tileleft   = themedir .. "/layouts/tileleft.png"
+theme.layout_tilebottom = themedir .. "/layouts/tilebottom.png"
+theme.layout_tiletop    = themedir .. "/layouts/tiletop.png"
+theme.layout_fairv      = themedir .. "/layouts/fairv.png"
+theme.layout_fairh      = themedir .. "/layouts/fairh.png"
+theme.layout_spiral     = themedir .. "/layouts/spiral.png"
+theme.layout_dwindle    = themedir .. "/layouts/dwindle.png"
+theme.layout_max        = themedir .. "/layouts/max.png"
+theme.layout_fullscreen = themedir .. "/layouts/fullscreen.png"
+theme.layout_magnifier  = themedir .. "/layouts/magnifier.png"
+theme.layout_floating   = themedir .. "/layouts/floating.png"
 -- }}}
 
 -- {{{ Titlebar
-theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/pinkneon/titlebar/close_focus.png"
-theme.titlebar_close_button_normal = "/usr/share/awesome/themes/pinkneon/titlebar/close_normal.png"
+theme.titlebar_close_button_focus  = themedir .. "/titlebar/close_focus.png"
+theme.titlebar_close_button_normal = themedir .. "/titlebar/close_normal.png"
 
-theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/pinkneon/titlebar/ontop_focus_active.png"
-theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/pinkneon/titlebar/ontop_normal_active.png"
-theme.titlebar_ontop_button_focus_inactive  = "/usr/share/awesome/themes/pinkneon/titlebar/ontop_focus_inactive.png"
-theme.titlebar_ontop_button_normal_inactive = "/usr/share/awesome/themes/pinkneon/titlebar/ontop_normal_inactive.png"
+theme.titlebar_ontop_button_focus_active  = themedir .. "/titlebar/ontop_focus_active.png"
+theme.titlebar_ontop_button_normal_active = themedir .. "/titlebar/ontop_normal_active.png"
+theme.titlebar_ontop_button_focus_inactive  = themedir .. "/titlebar/ontop_focus_inactive.png"
+theme.titlebar_ontop_button_normal_inactive = themedir .. "/titlebar/ontop_normal_inactive.png"
 
-theme.titlebar_sticky_button_focus_active  = "/usr/share/awesome/themes/pinkneon/titlebar/sticky_focus_active.png"
-theme.titlebar_sticky_button_normal_active = "/usr/share/awesome/themes/pinkneon/titlebar/sticky_normal_active.png"
-theme.titlebar_sticky_button_focus_inactive  = "/usr/share/awesome/themes/pinkneon/titlebar/sticky_focus_inactive.png"
-theme.titlebar_sticky_button_normal_inactive = "/usr/share/awesome/themes/pinkneon/titlebar/sticky_normal_inactive.png"
+theme.titlebar_sticky_button_focus_active  = themedir .. "/titlebar/sticky_focus_active.png"
+theme.titlebar_sticky_button_normal_active = themedir .. "/titlebar/sticky_normal_active.png"
+theme.titlebar_sticky_button_focus_inactive  = themedir .. "/titlebar/sticky_focus_inactive.png"
+theme.titlebar_sticky_button_normal_inactive = themedir .. "/titlebar/sticky_normal_inactive.png"
 
-theme.titlebar_floating_button_focus_active  = "/usr/share/awesome/themes/pinkneon/titlebar/floating_focus_active.png"
-theme.titlebar_floating_button_normal_active = "/usr/share/awesome/themes/pinkneon/titlebar/floating_normal_active.png"
-theme.titlebar_floating_button_focus_inactive  = "/usr/share/awesome/themes/pinkneon/titlebar/floating_focus_inactive.png"
-theme.titlebar_floating_button_normal_inactive = "/usr/share/awesome/themes/pinkneon/titlebar/floating_normal_inactive.png"
+theme.titlebar_floating_button_focus_active  = themedir .. "/titlebar/floating_focus_active.png"
+theme.titlebar_floating_button_normal_active = themedir .. "/titlebar/floating_normal_active.png"
+theme.titlebar_floating_button_focus_inactive  = themedir .. "/titlebar/floating_focus_inactive.png"
+theme.titlebar_floating_button_normal_inactive = themedir .. "/titlebar/floating_normal_inactive.png"
 
-theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/pinkneon/titlebar/maximized_focus_active.png"
-theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/pinkneon/titlebar/maximized_normal_active.png"
-theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/pinkneon/titlebar/maximized_focus_inactive.png"
-theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/pinkneon/titlebar/maximized_normal_inactive.png"
+theme.titlebar_maximized_button_focus_active  = themedir .. "/titlebar/maximized_focus_active.png"
+theme.titlebar_maximized_button_normal_active = themedir .. "/titlebar/maximized_normal_active.png"
+theme.titlebar_maximized_button_focus_inactive  = themedir .. "/titlebar/maximized_focus_inactive.png"
+theme.titlebar_maximized_button_normal_inactive = themedir .. "/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
 
