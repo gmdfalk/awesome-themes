@@ -79,4 +79,5 @@ theme.menu_width    = 100
 
 theme.awesome_icon = sharedicons .. "/awesome16.png"
 
+
 return theme

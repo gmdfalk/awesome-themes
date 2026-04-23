@@ -21,15 +21,15 @@ theme.font                                      = "xos4 Terminus 9"
 theme.fg_normal                                 = "#FEFEFE"
 theme.fg_focus                                  = "#32D6FF"
 theme.fg_urgent                                 = "#C83F11"
-theme.bg_normal                                 = "#222222"
+theme.bg_normal                                 = "#232323"
 theme.bg_focus                                  = "#1E2320"
 theme.bg_urgent                                 = "#3F3F3F"
 theme.taglist_fg_focus                          = "#00CCFF"
-theme.tasklist_bg_focus                         = "#222222"
+theme.tasklist_bg_focus                         = "#232323"
 theme.tasklist_fg_focus                         = "#00CCFF"
 theme.border_width                              = dpi(2)
 theme.border_normal                             = "#3F3F3F"
-theme.border_focus                              = "#6F6F6F"
+theme.border_focus                              = "#707070"
 theme.border_marked                             = "#CC9393"
 theme.titlebar_bg_focus                         = "#3F3F3F"
 theme.titlebar_bg_normal                        = "#3F3F3F"
@@ -396,5 +396,6 @@ function theme.at_screen_connect(s)
         },
     }
 end
+
 
 return theme

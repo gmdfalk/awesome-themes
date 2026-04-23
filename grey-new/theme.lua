@@ -126,4 +126,5 @@ theme.layout_dwindle = themedir .. "/layouts2/dwindle.png"
 
 theme.awesome_icon = themedir .. "/awesome14.png"
 
+
 return theme

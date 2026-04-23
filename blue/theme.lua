@@ -109,5 +109,6 @@ theme.layout_tileleft   = themedir .. "/layouts/tileleftw.png"
 theme.layout_tile       = themedir .. "/layouts/tilew.png"
 theme.layout_tiletop    = themedir .. "/layouts/tiletopw.png"
 
+
 return theme
 -- vim:set filetype=lua textwidth=80 fdm=marker tabstop=4 shiftwidth=4 expandtab smarttab autoindent smartindent: --

@@ -57,7 +57,6 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#000000"
 theme.border_marked = "#000000"
 
-
 theme.taglist_squares_sel   = sharedthemes.."/default/taglist/squarefw.png"
 theme.taglist_squares_unsel = sharedthemes.."/default/taglist/squarew.png"
 
@@ -114,6 +113,7 @@ theme.layout_spiral  = sharedthemes.."/default/layouts/spiralw.png"
 theme.layout_dwindle = sharedthemes.."/default/layouts/dwindlew.png"
 
 theme.awesome_icon = sharedicons.."/awesome16.png"
+
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80

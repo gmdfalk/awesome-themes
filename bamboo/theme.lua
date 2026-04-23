@@ -28,15 +28,15 @@ wallpaper4    = sharedthemes .. "/default/background.png"
 wpscript      = home .. "/.wallpaper"
 
 if awful.util.file_readable(wallpaper1) then
-	theme.wallpaper = wallpaper1
+    theme.wallpaper = wallpaper1
 elseif awful.util.file_readable(wallpaper2) then
-	theme.wallpaper = wallpaper2
+    theme.wallpaper = wallpaper2
 elseif awful.util.file_readable(wpscript) then
-	theme.wallpaper_cmd = { "sh " .. wpscript }
+    theme.wallpaper_cmd = { "sh " .. wpscript }
 elseif awful.util.file_readable(wallpaper3) then
-	theme.wallpaper = wallpaper3
+    theme.wallpaper = wallpaper3
 else
-	theme.wallpaper = wallpaper4
+    theme.wallpaper = wallpaper4
 end
 if awful.util.file_readable(config .. "/vain/init.lua") then
     theme.useless_gap_width  = "3"
@@ -161,5 +161,6 @@ theme.titlebar_maximized_button_focus_inactive  = themedir .. "/titlebar/maximiz
 theme.titlebar_maximized_button_normal_inactive = themedir .. "/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
+
 
 return theme

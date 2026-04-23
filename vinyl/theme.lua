@@ -39,7 +39,6 @@ else
   theme.wallpaper = wallpaper4
 end
 
-
 if awful.util.file_readable(wallpaper1) then
   theme.wallpaper = wallpaper1
 elseif awful.util.file_readable(wallpaper2) then
@@ -138,6 +137,7 @@ theme.layout_spiral  = sharedthemes .. "/default/layouts/spiralw.png"
 theme.layout_dwindle = sharedthemes .. "/default/layouts/dwindlew.png"
 
 theme.awesome_icon = sharedicons .. "/awesome16.png"
+
 
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80

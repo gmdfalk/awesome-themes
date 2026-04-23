@@ -122,5 +122,6 @@ theme.titlebar_maximized_button_focus_inactive = sharedthemes .. "/default/title
 theme.titlebar_maximized_button_normal_active = sharedthemes .. "/default/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active = sharedthemes .. "/default/titlebar/maximized_focus_active.png"
 
+
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80

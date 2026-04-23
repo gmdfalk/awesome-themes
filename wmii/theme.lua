@@ -40,7 +40,6 @@ else
 end
 --}}}
 
-
 -- {{{ Styles
 theme.font          = "Profont 8"
 
@@ -157,5 +156,6 @@ theme.titlebar_maximized_button_normal_active   = sharedthemes .. "/default/titl
 theme.titlebar_maximized_button_focus_active    = sharedthemes .. "/default/titlebar/maximized_focus_active.png"
 -- }}}
 -- }}}
+
 
 return theme

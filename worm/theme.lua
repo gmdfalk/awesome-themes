@@ -85,4 +85,5 @@ theme.layout_dwindle = themes .. "/wabbit/layouts/dwindlew.png"
 theme.awesome_icon = themes .. "/wabbit/logo20_orange.png"
 -- }}}
 
+
 return theme

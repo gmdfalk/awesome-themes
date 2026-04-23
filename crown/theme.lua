@@ -54,7 +54,7 @@ theme.fg_focus  = "#e6ca99"
 --theme.fg_urgent = "#CC9393"
 theme.fg_urgent = "#FF0000"
 theme.bg_normal = "#313031ee"
---theme.bg_focus  = "#1E2320"
+--theme.bg_focus  = "#1E2420"
 theme.taglist_bg_focus  = "#b3885e"
 --theme.bg_focus  = "#b3885e"
 theme.bg_focus  = "#343030"
@@ -163,5 +163,6 @@ theme.titlebar_maximized_button_focus_inactive  = themedir .. "/titlebar/maximiz
 theme.titlebar_maximized_button_normal_inactive = themedir .. "/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
+
 
 return theme

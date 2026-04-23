@@ -41,7 +41,6 @@ end
 
 --}}}
 
-
 -- {{{ Styles
 theme.font      = "Terminus 8"
 
@@ -57,7 +56,7 @@ theme.bg_urgent = theme.bg_normal
 -- {{{ Borders
 theme.border_width  = 1
 theme.border_focus  = "#EE6363"
-theme.border_normal = theme.bg_normal 
+theme.border_normal = theme.bg_normal
 theme.border_marked = "#622323"
 -- }}}
 
@@ -74,7 +73,7 @@ theme.fg_end_widget    = "#CC0000" -- high
 theme.fg_off_widget    = theme.bg_normal -- bg
 theme.fg_netup_widget  = "#9ACD32"
 theme.fg_netdn_widget  = theme.border_focus
-theme.bg_widget        = theme.bg_urgent 
+theme.bg_widget        = theme.bg_urgent
 theme.border_widget    = theme.bg_urgent
 -- }}}
 
@@ -96,7 +95,6 @@ theme.mouse_finder_color = theme.fg_urgent
 -- theme.menu_[height|width|border_color|border_width]
 -- }}}
 -- }}}
-
 
 -- {{{ Icons
 --

@@ -66,5 +66,6 @@ theme.taglist_squares = true
 -- Display close button inside titlebar
 theme.titlebar_close_button = true
 
+
 return theme
 

@@ -142,5 +142,6 @@ theme.widget_fs2      = themes .. "/icons/dust12/fs_02.png"
 theme.widget_up       = themes .. "/icons/dust12/up.png"
 theme.widget_down     = themes .. "/icons/dust12/down.png"
 
+
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80

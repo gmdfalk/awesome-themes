@@ -6,26 +6,26 @@ awful.util = require("awful.util")
 
 theme = {}
 
-home          = os.getenv("HOME")
-config        = awful.util.getdir("config")
-shared        = "/usr/share/awesome"
+home = os.getenv("HOME")
+config = awful.util.getdir("config")
+shared = "/usr/share/awesome"
 if not awful.util.file_readable(shared .. "/icons/awesome16.png") then
-    shared    = "/usr/share/local/awesome"
+    shared = "/usr/share/local/awesome"
 end
-sharedicons   = shared .. "/icons"
-sharedthemes  = shared .. "/themes"
-themes        = config .. "/themes"
-themename     = "/blue-black-red"
+sharedicons = shared .. "/icons"
+sharedthemes = shared .. "/themes"
+themes = config .. "/themes"
+themename = "/blue-black-red"
 if not awful.util.file_readable(themes .. themename .. "/theme.lua") then
        themes = sharedthemes
 end
-themedir      = themes .. themename
+themedir = themes .. themename
 
-wallpaper1    = themedir .. "/background.jpg"
-wallpaper2    = themedir .. "/background.png"
-wallpaper3    = sharedthemes .. "/zenburn/zenburn-background.png"
-wallpaper4    = sharedthemes .. "/default/background.png"
-wpscript      = home .. "/.wallpaper"
+wallpaper1 = themedir .. "/background.jpg"
+wallpaper2 = themedir .. "/background.png"
+wallpaper3 = sharedthemes .. "/zenburn/zenburn-background.png"
+wallpaper4 = sharedthemes .. "/default/background.png"
+wpscript = home .. "/.wallpaper"
 
 if awful.util.file_readable(wallpaper1) then
   theme.wallpaper = wallpaper1
@@ -40,19 +40,19 @@ else
 end
 --}}}
 
-theme.font          = "Sans 8"
+theme.font = "Sans 8"
 
-theme.bg_normal     = "#1c1c1c"
-theme.bg_focus      = "#7985A3"
-theme.bg_urgent     = "#A36666"
+theme.bg_normal = "#1c1c1c"
+theme.bg_focus = "#7985A3"
+theme.bg_urgent = "#A36666"
 
-theme.fg_normal     = "#C5C5C5"
-theme.fg_focus      = "#E4E4E4"
-theme.fg_urgent     = "#A36666"
+theme.fg_normal = "#C5C5C5"
+theme.fg_focus = "#E4E4E4"
+theme.fg_urgent = "#A36666"
 
-theme.border_width  = 4
+theme.border_width = 4
 theme.border_normal = "#272C30"
-theme.border_focus  = "#7985A3"
+theme.border_focus = "#7985A3"
 theme.border_marked = "#A3BA8C"
 
 -- There are another variables sets
@@ -64,9 +64,9 @@ theme.border_marked = "#A3BA8C"
 theme.taglist_bg_focus = "#990000"
 
 -- Display the taglist squares
-theme.taglist_squares_sel =     sharedthemes .. "/default/taglist/squarefw.png"
-theme.taglist_squares_unsel =   sharedthemes .. "/default/taglist/squarew.png"
-theme.tasklist_floating_icon =  nil -- sharedthemes .. "/default/tasklist/floatingw.png"
+theme.taglist_squares_sel = sharedthemes .. "/default/taglist/squarefw.png"
+theme.taglist_squares_unsel = sharedthemes .. "/default/taglist/squarew.png"
+theme.tasklist_floating_icon = nil -- sharedthemes .. "/default/tasklist/floatingw.png"
 
 -- Bottom wibox height
 theme.wibox_bottom_height = 14
@@ -80,8 +80,8 @@ theme.menu_bg_normal = "#454545"
 theme.menu_border_color = "#7985A3"
 theme.menu_border_width = 0
 theme.menu_submenu_icon = sharedthemes .. "/default/submenu.png"
-theme.menu_height   = 24
-theme.menu_width    = 200
+theme.menu_height = 24
+theme.menu_width = 200
 theme.menu_context_height = 20
 
 -- You can add as many variables as
@@ -114,17 +114,17 @@ theme.titlebar_maximized_button_normal_active = themedir .. "/titlebar/maximized
 theme.titlebar_maximized_button_focus_active = themedir .. "/titlebar/maximized_focus_active.png"
 
 -- You can use your own layout icons like this:
-theme.layout_dwindle =      sharedthemes .. "/default/layouts/dwindlew.png"
-theme.layout_fairh =        sharedthemes .. "/default/layouts/fairhw.png"
-theme.layout_fairv =        sharedthemes .. "/default/layouts/fairvw.png"
-theme.layout_floating =     sharedthemes .. "/default/layouts/floatingw.png"
-theme.layout_magnifier =    sharedthemes .. "/default/layouts/magnifierw.png"
-theme.layout_max =          sharedthemes .. "/default/layouts/maxw.png"
-theme.layout_spiral =       sharedthemes .. "/default/layouts/spiralw.png"
-theme.layout_tilebottom =   sharedthemes .. "/default/layouts/tilebottomw.png"
-theme.layout_tileleft =     sharedthemes .. "/default/layouts/tileleftw.png"
-theme.layout_tile =         sharedthemes .. "/default/layouts/tilew.png"
-theme.layout_tiletop =      sharedthemes .. "/default/layouts/tiletopw.png"
+theme.layout_dwindle = sharedthemes .. "/default/layouts/dwindlew.png"
+theme.layout_fairh = sharedthemes .. "/default/layouts/fairhw.png"
+theme.layout_fairv = sharedthemes .. "/default/layouts/fairvw.png"
+theme.layout_floating = sharedthemes .. "/default/layouts/floatingw.png"
+theme.layout_magnifier = sharedthemes .. "/default/layouts/magnifierw.png"
+theme.layout_max = sharedthemes .. "/default/layouts/maxw.png"
+theme.layout_spiral = sharedthemes .. "/default/layouts/spiralw.png"
+theme.layout_tilebottom = sharedthemes .. "/default/layouts/tilebottomw.png"
+theme.layout_tileleft = sharedthemes .. "/default/layouts/tileleftw.png"
+theme.layout_tile = sharedthemes .. "/default/layouts/tilew.png"
+theme.layout_tiletop = sharedthemes .. "/default/layouts/tiletopw.png"
 
 --theme.awesome_icon = config .. "/icons/im-aim.png"
 theme.clientmenu_icon = sharedicons .. "/awesome16.png"
@@ -135,6 +135,6 @@ theme.icon_theme = "Tango"
 theme.icon_theme_size = "32x32"
 --theme.default_client_icon = config .. "/icons/float.gif"
 
-return theme
 
+return theme
 

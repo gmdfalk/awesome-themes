@@ -385,7 +385,6 @@ function theme.vertical_wibox(s)
     end)
 end
 
-
 function theme.at_screen_connect(s)
     -- Quake application
     s.quake = lain.util.quake({ app = awful.util.terminal, border = theme.border_width })
@@ -464,5 +463,6 @@ function theme.at_screen_connect(s)
 
     gears.timer.delayed_call(theme.vertical_wibox, s)
 end
+
 
 return theme

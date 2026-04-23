@@ -95,4 +95,5 @@ theme.layout_dwindle= themedir .. "/layouts/dwindle.png"
 theme.layout_tilebottom = themedir .. "/layouts/tilebottom.png"
 theme.layout_tile = themedir .. "/layouts/tile.png"
 
+
 return theme

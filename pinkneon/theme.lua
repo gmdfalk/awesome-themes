@@ -30,7 +30,6 @@ if not awful.util.file_readable(shared .. "/icons/awesome16.png") then
 wallpaper1    = themedir .. "/background.png"
 wpscript      = home .. "/.wallpaper"
 
-
 if awful.util.file_readable(wallpaper1) then
   theme.wallpaper = wallpaper1
 else awful.util.file_readable(wpscript) then
@@ -155,5 +154,6 @@ theme.titlebar_maximized_button_focus_inactive  = themedir .. "/titlebar/maximiz
 theme.titlebar_maximized_button_normal_inactive = themedir .. "/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
+
 
 return theme

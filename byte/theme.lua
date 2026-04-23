@@ -95,5 +95,6 @@ theme.widget_batt_empty = themes .. "/icons/byte/bat_empty.png"
 theme.widget_clock = themes .. "/icons/byte/clock.png"
 theme.widget_mpd = themes .. "/icons/byte/note.png"
 
+
 return theme
 -- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:encoding=utf-8:textwidth=80

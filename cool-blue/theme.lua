@@ -84,4 +84,5 @@ theme.layout_dwindle = themedir .. "/layouts/dwindlew.png"
 theme.awesome_icon = themedir .. "/logo20_orange.png"
 -- }}}
 
+
 return theme

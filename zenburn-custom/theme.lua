@@ -55,7 +55,7 @@ theme.bg_urgent = "#3F3F3F"
 -- {{{ Borders
 theme.border_width  = "1"
 theme.border_normal = "#3F3F3F"
-theme.border_focus  = "#6F6F6F"
+theme.border_focus  = "#6F706F"
 theme.border_marked = "#CC9393"
 -- }}}
 
@@ -94,7 +94,6 @@ theme.mouse_finder_color = "#CC9393"
 -- theme.menu_[height|width|border_color|border_width]
 -- }}}
 -- }}}
-
 
 -- {{{ Icons
 --
@@ -164,5 +163,6 @@ theme.titlebar_maximized_button_focus_inactive  = themedir .. "/titlebar/maximiz
 theme.titlebar_maximized_button_normal_inactive = themedir .. "/titlebar/maximized_normal_inactive.png"
 -- }}}
 -- }}}
+
 
 return theme

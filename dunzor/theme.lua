@@ -40,7 +40,6 @@ else
 end
 --}}}
 
-
 --theme.font          = "fixed 9"
 
 theme.bg_normal     = "#161616"

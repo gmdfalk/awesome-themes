@@ -7,7 +7,7 @@ awful.util = require("awful.util")
 theme = {}
 
 -- possible layouts are: "10ich","large","1920",""
-conky_layout = "" 
+conky_layout = ""
 
 home          = os.getenv("HOME")
 config        = awful.util.getdir("config")
@@ -130,5 +130,6 @@ theme.layout_spiral = themedir .. "/layouts/spiralw.png"
 theme.layout_dwindle = themedir .. "/layouts/dwindlew.png"
 
 theme.awesome_icon = themedir .. "/awesome16.png"
+
 
 return theme
